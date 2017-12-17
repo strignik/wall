@@ -42,13 +42,13 @@ export class CardsComponent implements OnInit {
     }
   }
 
-  addComment(comment, card, element) {
-    if (comment.length <= 0) {
+  addComment(name, comment, card, element) {
+    if (comment.length <= 0 && name.length <= 0) {
       alert('Emty field');
       return false;
     }
-    this.cardService.addComment(comment,card)
-    element.value = ''
+    this.cardService.addComment(name, comment, card)
+    element.value = '';
   }
 
   deleteComment(comment, card) {

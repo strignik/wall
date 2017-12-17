@@ -38,9 +38,9 @@ export class CardService {
     return this.http.delete(this.cardsUrl + "/" + card.id, httpOptions);
   }
 
-  addComment(comment: Comment, card: Card): Observable<any> {
+  addComment(name: Comment, comment: Comment, card: Card): Observable<any> {
     if (card.comments !== undefined && card.comments !== null && card.comments.length > 0) {
-      card.comments.push({id : Math.random(), text: comment});
+      card.comments.push({id : Math.random(), name: name, text: comment});
     } else {
       card.comments = [{id : 1, text: comment}]
     }

@@ -1,3 +1,5 @@
-<button mat-button routerLink='/logout'>LogOut</button>
+<div *ngIf="status()" class="logout">
+    <button mat-button routerLink='/logout'>LogOut <i class="fas fa-sign-out-alt"></i></button>
+</div>
 <app-cards (refresh)="refresh($event)"></app-cards>
 <app-add-card *ngIf="status()" (cardAddEvent)="cartAddEvent($event)"></app-add-card>

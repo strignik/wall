@@ -8,15 +8,19 @@
   </mat-card-title>
   <mat-card-content>
       <mat-list role="list">
-          <mat-list-item *ngFor='let comment of card.comments' role="listitem">{{comment.text}}
-            <button *ngIf='status()' mat-button (click)="deleteComment(comment, card)"><i class="far fa-times-circle"></i></button>
+          <mat-list-item *ngFor='let comment of card.comments' role="listitem">
+            {{comment.name+': '}}{{comment.text}}
+            <button *ngIf='status()' mat-icon-button (click)="deleteComment(comment, card)"><i class="far fa-times-circle"></i></button>
           </mat-list-item>
         </mat-list>
-        <div *ngIf='status()' class="addComment">
+        <div class="addComment">
             <mat-form-field class="reg-full-width">
-                <input type="textarea" #comment  matInput placeholder="Comment">
-              </mat-form-field>
-              <button mat-button (click)="addComment(comment.value, card, comment)"><i class="far fa-comment-alt fa-lg"></i></button>
+              <input type="textarea" #name matInput placeholder="Name" value="Anonimous">
+            </mat-form-field>
+            <mat-form-field class="reg-full-width">
+              <input type="textarea" #comment  matInput placeholder="Comment">
+            </mat-form-field>
+              <button mat-icon-button (click)="addComment(name.value, comment.value, card, comment)"><i class="far fa-comment-alt fa-lg"></i></button>
         </div>
   </mat-card-content>
   </mat-card>

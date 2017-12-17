@@ -41,6 +41,7 @@ export class AuthComponent implements OnInit {
         if(res !== undefined){
           this.authService.addUser({login, password} as User)
           .subscribe(result => {
+            alert('New user '+login+' created! Press Login.')
             console.log(result);
           })
         }
