@@ -7,3 +7,12 @@
     display: flex;
     justify-content: space-between;
 }
+.nameInput {
+    color: blue;
+}
+#name {
+    color: blue;
+}
+#trashButton {
+    color: rgb(168, 6, 6);
+}

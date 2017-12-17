@@ -12,7 +12,7 @@ import { Location } from '@angular/common';
 export class CardDetailsComponent implements OnInit {
   @Input() cardIn: Card;
 
-  private card: any = this.cardIn ? this.cardIn : {};
+  public card: any = this.cardIn ? this.cardIn : {};
 
   constructor(
     private route: ActivatedRoute,

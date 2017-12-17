@@ -2,19 +2,19 @@
   <mat-card-title>
       <div class="head">
           <button mat-icon-button routerLink='/details/{{card.id}}'><i class="fas fa-pencil-alt fa-lg"></i></button>
-          <button *ngIf='status()' mat-icon-button (click)="deleteCard(card)"><i class="fas fa-trash-alt fa-lg"></i></button>
+          <button id="trashButton" *ngIf='status()' mat-icon-button (click)="deleteCard(card)"><i class="fas fa-trash-alt fa-lg"></i></button>
         </div>
         <p>{{card.content}}</p>
   </mat-card-title>
   <mat-card-content>
       <mat-list role="list">
           <mat-list-item *ngFor='let comment of card.comments' role="listitem">
-            {{comment.name+': '}}{{comment.text}}
+            <span id="name">{{comment.name}}: </span>{{comment.text}}
             <button *ngIf='status()' mat-icon-button (click)="deleteComment(comment, card)"><i class="far fa-times-circle"></i></button>
           </mat-list-item>
         </mat-list>
         <div class="addComment">
-            <mat-form-field class="reg-full-width">
+            <mat-form-field class="nameInput">
               <input type="textarea" #name matInput placeholder="Name" value="Anonimous">
             </mat-form-field>
             <mat-form-field class="reg-full-width">

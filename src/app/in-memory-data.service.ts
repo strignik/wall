@@ -18,10 +18,12 @@ export class InMemoryDataService implements InMemoryDbService {
             { id: 2, content: 'LIVE NOW: Watch as SpaceX’s Dragon cargo vehicle is secured to International Space Station, delivering science & supplies' , comments: [
                 {
                     id : 1,
+                    name: 'Alex',
                     text: 'It`s a tarp'
                 },
                 {
                     id : 2,
+                    name: 'Ron',
                     text: 'What`s the role of 33rd degree masons within your infrastructure ?'
                 },
             ] },
