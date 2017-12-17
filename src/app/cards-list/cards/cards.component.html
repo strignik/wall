@@ -1,0 +1,22 @@
+<mat-card *ngFor='let card of cards'>
+  <mat-card-title>
+      <div class="head">
+          <button mat-icon-button routerLink='/details/{{card.id}}'><i class="fas fa-pencil-alt fa-lg"></i></button>
+          <button *ngIf='status()' mat-icon-button (click)="deleteCard(card)"><i class="fas fa-trash-alt fa-lg"></i></button>
+        </div>
+        <p>{{card.content}}</p>
+  </mat-card-title>
+  <mat-card-content>
+      <mat-list role="list">
+          <mat-list-item *ngFor='let comment of card.comments' role="listitem">{{comment.text}}
+            <button *ngIf='status()' mat-button (click)="deleteComment(comment, card)"><i class="far fa-times-circle"></i></button>
+          </mat-list-item>
+        </mat-list>
+        <div *ngIf='status()' class="addComment">
+            <mat-form-field class="reg-full-width">
+                <input type="textarea" #comment  matInput placeholder="Comment">
+              </mat-form-field>
+              <button mat-button (click)="addComment(comment.value, card, comment)"><i class="far fa-comment-alt fa-lg"></i></button>
+        </div>
+  </mat-card-content>
+  </mat-card>

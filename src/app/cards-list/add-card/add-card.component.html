@@ -1,0 +1,7 @@
+<mat-card>
+  <mat-form-field>
+    <textarea #Content placeholder="Text" matInput matTextareaAutosize matAutosizeMinRows="2"
+      matAutosizeMaxRows="20"></textarea>
+  </mat-form-field>
+  <button mat-icon-button (click)='add(Content.value)'><i class="fas fa-paper-plane fa-lg"></i></button>
+</mat-card>
